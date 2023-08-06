@@ -6,6 +6,7 @@ import AddForm from '../addform/addform';
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const Contacts = () => {
 
@@ -41,9 +42,11 @@ const Contacts = () => {
             <div className="body">
                 <div className="addbtn" id="addbtn"><a href="../" onClick={handleAddButtonClick}>Add New Contact</a></div>
                 <div className="cards" id="cards">
-                    
+
                     {cards.map((card) => (
-                        <Card id={card.id} name={card.name} phone={card.phone} />
+                        <Link key={card.id} to={`/contact/${card.id}`}>
+                            <Card id={card.id} name={card.name} phone={card.phone} />
+                      </Link>
                     ))}
                 </div>         
             </div>
