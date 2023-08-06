@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
+nav{
+    padding: 50px 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background-color: #f4faff;
+}
+
+nav .logo{
+    color: #068FFF;
+    font-size: xx-large;
+}
+
+nav .right_nav a{
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+nav .right_nav a:hover{
+    color: #068FFF;
+    border-bottom: 2px solid #068FFF;
+}
