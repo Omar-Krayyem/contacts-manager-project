@@ -1,0 +1,42 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    padding: 25px 30px;
+}
+.addbtn{
+    display: flex;
+    align-content: flex-start;
+    padding-left: 100px;
+}
+
+.addbtn a{
+    background-color: #068FFF;
+    padding: 10px 20px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.addbtn a:hover{
+    color: #068FFF;
+    background-color: white;
+    border: 1px solid #068FFF;
+    transition: .5s;
+}
+
+.cards{
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 25px 30px;
+}

@@ -10,7 +10,7 @@ nav{
     padding: 50px 30px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     background-color: #f4faff;

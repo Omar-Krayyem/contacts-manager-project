@@ -1,7 +1,7 @@
 import React from "react";
 import '../addform/addform.css'
 
-const Popup = ({ onClose }) =>{
+const AddForm = ({ onClose }) =>{
     return (
         <div id="upload_popup" class="upload_popup">
             <div class="upload_files_container">
@@ -33,4 +33,4 @@ const Popup = ({ onClose }) =>{
     );
 } 
 
-export default Popup;
+export default AddForm;
