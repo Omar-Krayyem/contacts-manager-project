@@ -8,28 +8,28 @@ const Contact = () => {
         <div>
         <div><Nav/></div>
 
-        <div class="body">
-            <div class="title"><h1>Contact Info</h1></div>
+        <div className="body">
+            <div className="title"><h1>Contact Info</h1></div>
             <form>
-                <div class="text_feild">
+                <div className="text_feild">
                     <label>Name</label><br></br>
                     <input type="text" id="name" placeholder="Name"></input> 
                 </div>
-                <div class="text_feild">
+                <div className="text_feild">
                 <label>Phone</label><br></br>
                 <input type="text" id="description" placeholder="00961 00 000000"></input> 
                 </div>
-                <div class="text_feild">
+                <div className="text_feild">
                 <label>latitude</label><br></br>
                 <input type="text" id="price" placeholder="Number(00.00)"></input> 
                 </div>
-                <div class="text_feild">
+                <div className="text_feild">
                     <label>longtude</label><br></br>
                     <input type="text" id="price" placeholder="Number(00.00)"></input> 
                 </div>
-                <div class="form_btn"> 
-                    <div class="update btn"><a href="signup.html">Update</a></div>
-                    <div class="delete btn"><a href="signup.html">Delete</a></div>
+                <div className="form_btn"> 
+                    <div className="update btn"><a href="signup.html">Update</a></div>
+                    <div className="delete btn"><a href="signup.html">Delete</a></div>
                 </div>
                 
             </form>

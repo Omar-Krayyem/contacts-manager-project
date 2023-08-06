@@ -1,14 +1,14 @@
 import React from "react";
 import '../card/card.css';
 
-const Card = () => {
+const Card = (props) => {
     return(
-            <div class="card" id="card">
-                <div class="face front">
-                    <div class="card_img"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt=""></img></div>
-                    <div class="class-details">
-                        <div class="card_title"><h2>Omar Krayyem</h2></div>
-                        <div class="card_phone"><h3>00961 81 766990</h3></div>
+            <div className="card" id="card">
+                <div clclassNameass="face front">
+                    <div className="card_img"><img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt=""></img></div>
+                    <div className="class-details">
+                        <div className="card_title"><h2>{props.name}</h2></div>
+                        <div className="card_phone"><h3>{props.phone}</h3></div>
                     </div>
                 </div> 
             </div>

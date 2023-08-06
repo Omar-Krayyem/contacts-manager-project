@@ -5,7 +5,7 @@ const Nav = () => {
     return (
         <div>
             <nav>
-                 <div class="logo"><h1>Contact Manager</h1></div>
+                 <div className="logo"><h1>Contact Manager</h1></div>
             </nav>
         </div>
     );

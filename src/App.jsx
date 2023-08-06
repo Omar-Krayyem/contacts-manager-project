@@ -1,5 +1,6 @@
 import './App.css';
 import Contacts from './contacts/contacts';
+// import Contact from './contact/contact';
 
 function App() {
   return (
