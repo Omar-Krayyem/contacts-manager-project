@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Contact;
 use Exception;
 
+
 class ContactController extends Controller
 {
     function getAll(){
@@ -17,12 +18,17 @@ class ContactController extends Controller
         }
     }
 
-    function getById($id){
-        try{
-            $contact = Contact::with('id' , $id)->get();
+    public function getById($id) {
+        try {
+            $contact = Contact::find($id);
+    
+            if (!$contact) {
+                return $this->customResponse(null, 'Contact not found', 404);
+            }
+    
             return $this->customResponse($contact);
-        }catch(Exception $e){
-            return self::customResponse($e->getMessage(),'error',500);
+        } catch(Exception $e) {
+            return $this->customResponse($e->getMessage(), 'error', 500);
         }
     }
 
