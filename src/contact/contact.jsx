@@ -7,15 +7,17 @@ import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+import { Map , Marker} from "pigeon-maps"
+
 const Contact = () => {
     // const id = 6;
     const { id } = useParams();
 
 
-    const [name, setName] = useState();
-    const [phone, setPhone] = useState();
-    const [latitude, setLatitude] = useState();
-    const [longtude, setLongtude] = useState();
+    const [name, setName] = useState('');
+    const [phone, setPhone] = useState('');
+    const [latitude, setLatitude] = useState('');
+    const [longtude, setLongtude] = useState('');
       
     useEffect(() => {
         const getData = async () => {
@@ -61,6 +63,8 @@ const Contact = () => {
             window.location.href = '/';
         });
     };
+    // const [center, setCenter] = useState([50.879, 4.6997])
+    // const [zoom, setZoom] = useState(11)
 
     return (
         <div>
@@ -91,10 +95,13 @@ const Contact = () => {
                 </div>
                 
             </form>
+
+            <div className='container'>
+                <Map height={300} defaultCenter={[latitude, longtude]} defaultZoom={11}>
+                    <Marker width={50} anchor={[latitude, longtude]} />
+                </Map>
+            </div>
         </div>
-
-        
-
         <div><Footer/></div>
     </div>
     );
