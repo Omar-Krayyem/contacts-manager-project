@@ -120,20 +120,12 @@ form{
     padding: 10px 20px;
 }
 
-.form_btn .delete a{
-    background-color: red;
-}
 
-.form_btn .update a:hover{
+.form_btn .update a:hover,
+.form_btn .delete a:hover{
     background-color: white;
     color: #068FFF;
     border: 1px solid #068FFF;
     transition: .5s;
 }
 
-.form_btn .delete a:hover{
-    background-color: white;
-    color: red;
-    border: 1px solid red;
-    transition: .5s;
-}

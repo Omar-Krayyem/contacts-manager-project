@@ -3,16 +3,13 @@ import '../contact/contact.css';
 import Footer from '../footer/footer'
 import Nav from '../nav/nav';
 
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import { useHistory } from 'react-router-dom';
-
-
 
 const Contact = () => {
-    const id = 6;
-    // const history = useHistory();
+    // const id = 6;
+    const { id } = useParams();
 
 
     const [name, setName] = useState();
@@ -34,7 +31,7 @@ const Contact = () => {
             }
         };
         getData();
-    }, id);
+    }, [id]);
 
     const update = (event) => {
         event.preventDefault();
@@ -61,7 +58,7 @@ const Contact = () => {
         })
         .catch(error => {
             console.log(error);
-            window.location.href = '/contacts';
+            window.location.href = '/';
         });
     };
 
@@ -89,8 +86,8 @@ const Contact = () => {
                     <input type="text" id="price" value={longtude} onChange={(event)=>setLongtude(event.target.value)} placeholder="Number(00.00)"></input> 
                 </div>
                 <div className="form_btn"> 
-                    <div className="update btn" onClick={update}><a >Update</a></div>
-                    <div className="delete btn" onClick={deletebtn}><a >Delete</a></div>
+                    <div className="update btn" onClick={update}><a href='./'>Update</a></div>
+                    <div className="delete btn" onClick={deletebtn}><a href='./' >Delete</a></div>
                 </div>
                 
             </form>

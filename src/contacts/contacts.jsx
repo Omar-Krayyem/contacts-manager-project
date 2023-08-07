@@ -2,11 +2,11 @@ import '../contacts/contacts.css';
 import Card from '../card/card';
 import Footer from '../footer/footer'
 import Nav from '../nav/nav';
-import AddForm from '../addform/addform';
+import AddForm from '../addform.jsx/addform';
 
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 const Contacts = () => {
 
@@ -44,9 +44,8 @@ const Contacts = () => {
                 <div className="cards" id="cards">
 
                     {cards.map((card) => (
-                        <Link key={card.id} to={`/contact/${card.id}`}>
+                      
                             <Card id={card.id} name={card.name} phone={card.phone} />
-                      </Link>
                     ))}
                 </div>         
             </div>
