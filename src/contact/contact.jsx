@@ -3,7 +3,7 @@ import '../contact/contact.css';
 import Footer from '../footer/footer'
 import Nav from '../nav/nav';
 
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -17,7 +17,7 @@ const Contact = () => {
     const [name, setName] = useState('');
     const [phone, setPhone] = useState('');
     const [latitude, setLatitude] = useState('');
-    const [longtude, setLongtude] = useState('');
+    const [longitude, setLongitude] = useState('');
       
     useEffect(() => {
         const getData = async () => {
@@ -27,7 +27,7 @@ const Contact = () => {
               setName(response.data.data.name);
               setPhone(response.data.data.phone);
               setLatitude(response.data.data.latitude);
-              setLongtude(response.data.data.longtude);
+              setLongitude(response.data.data.longtude);
             } catch (error) {
               console.log(error);
             }
@@ -38,7 +38,7 @@ const Contact = () => {
     const update = (event) => {
         event.preventDefault();
         
-        const postData = {id, name, phone, latitude, longtude };
+        const postData = {id, name, phone, latitude, longitude };
     
         axios.post('http://127.0.0.1:8000/api/contacts/update', postData)
         .then(response => {
@@ -63,8 +63,10 @@ const Contact = () => {
             window.location.href = '/';
         });
     };
-    // const [center, setCenter] = useState([50.879, 4.6997])
-    // const [zoom, setZoom] = useState(11)
+
+    const back = ()=> {
+        window.location.href = '../';
+    }
 
     return (
         <div>
@@ -86,10 +88,11 @@ const Contact = () => {
                 <input type="text" id="price" value={latitude} onChange={(event)=>setLatitude(event.target.value)} placeholder="Number(00.00)"></input> 
                 </div>
                 <div className="text_feild">
-                    <label>longtude</label><br></br>
-                    <input type="text" id="price" value={longtude} onChange={(event)=>setLongtude(event.target.value)} placeholder="Number(00.00)"></input> 
+                    <label>longitude</label><br></br>
+                    <input type="text" id="price" value={longitude} onChange={(event)=>setLongitude(event.target.value)} placeholder="Number(00.00)"></input> 
                 </div>
                 <div className="form_btn"> 
+                    <Link to={'/'}><div className="back btn" onClick={back}><a href='./' >back</a></div></Link>
                     <div className="update btn" onClick={update}><a href='./'>Update</a></div>
                     <div className="delete btn" onClick={deletebtn}><a href='./' >Delete</a></div>
                 </div>
@@ -97,8 +100,8 @@ const Contact = () => {
             </form>
 
             <div className='container'>
-                <Map height={300} defaultCenter={[latitude, longtude]} defaultZoom={11}>
-                    <Marker width={50} anchor={[latitude, longtude]} />
+                <Map height={300} defaultCenter={[latitude, longitude]} defaultZoom={11}>
+                    <Marker width={50} anchor={[latitude, longitude]} />
                 </Map>
             </div>
         </div>

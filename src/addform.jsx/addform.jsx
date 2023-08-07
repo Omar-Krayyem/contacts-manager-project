@@ -8,12 +8,12 @@ const AddForm = ({ onClose }) =>{
     const [name, setName] = useState();
     const [phone, setPhone] = useState();
     const [latitude, setLatitude] = useState();
-    const [longtude, setLongtude] = useState();
+    const [longitude, setLongitude] = useState();
     
     const add = (event) => {
         event.preventDefault();
 
-        const postData = { name, phone, latitude, longtude };
+        const postData = { name, phone, latitude, longitude };
 
         axios.post('http://127.0.0.1:8000/api/contacts/store', postData)
         .then(response => {
@@ -46,11 +46,11 @@ const AddForm = ({ onClose }) =>{
                         <input type="text" id="price" placeholder="Number(00.00)" onChange={(event)=>setLatitude(event.target.value)}></input> 
                     </div>
                     <div className="text_feild">
-                        <label>longtude</label><br></br>
-                        <input type="text" id="price" placeholder="Number(00.00)" onChange={(event)=>setLongtude(event.target.value)}></input>
+                        <label>longitude</label><br></br>
+                        <input type="text" id="price" placeholder="Number(00.00)" onChange={(event)=>setLongitude(event.target.value)}></input>
                     </div>
                     <input type="submit" className="btn" id="submit" onClick={add} value="Add"></input>
-                    <div className="close_btn"><a href="signup.html" onClick={onClose}>Close</a></div>
+                    <div className="close_btn"><a href="../" onClick={onClose}>Close</a></div>
                 </form>
             </div>
           </div>

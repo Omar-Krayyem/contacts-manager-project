@@ -24,11 +24,16 @@
 }
 
 .card .front{
-    transform: perspective(600px) rotateY(0deg);
     box-shadow: 0 5px 10px #C5DFF8;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+
+.card_img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .card .front img{
@@ -36,6 +41,7 @@
     height: 100%;
     object-fit: cover;
     padding: 20px;
+    align-items: center;
 }
 
 .card .front h3, .card .front h2{
