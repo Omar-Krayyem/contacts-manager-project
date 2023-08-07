@@ -1,4 +1,3 @@
-// import React from "react";
 import '../contact/contact.css';
 import Footer from '../footer/footer'
 import Nav from '../nav/nav';
@@ -10,7 +9,6 @@ import axios from 'axios';
 import { Map , Marker} from "pigeon-maps"
 
 const Contact = () => {
-    // const id = 6;
     const { id } = useParams();
 
 

@@ -1,4 +1,3 @@
-// import React from "react";
 import './addform.css'
 import React, { useState} from 'react';
 import axios from 'axios';
